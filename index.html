@@ -4,7 +4,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Alex Regnier Bernard</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type ='text/css'>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -13,6 +16,7 @@
   <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+	<script src="js/highlow.js"></script>
 	
 	<nav class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
@@ -28,7 +32,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">Philosophy</a></li>
-					<li><a href="highlow.html">Play High-Low</a></li>
+					<li><a href="#">Projects</a></li>
 					<li><a href="#">Resume</a></li>
 					<li><a href="#">Contact Me</a></li>
 				</ul>
@@ -37,13 +41,65 @@
 	</nav>
 	
 	<div class="jumbotron">
-	<div class="container">
-		<h1>Hello.</h1>
-		<p>Welcome to my website. I am primarily using this to play with HTML, CSS, JavaScript, PHP, and SQL. There may be more here in the future.</p>
-		<br>
-		<p><a class="btn btn-primary btn-lg" href="high-low.html" role="button">Play my High-Low game »</a>
-	</div>
-</div>
+		<div class="container">
+			<h1>Hello.</h1>
+			<p>Welcome to my website. I am primarily using this to play with HTML, CSS, JavaScript, PHP, and SQL. There may be more here in the future.</p>
+			<br>
+			<p>
+				<a class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#play-hi-low" role="button" onclick = "SetUp()">Play my High-Low game »</a>
+			</p>
+		</div>
+	</div>	
+	
+	<section class="cheddar">
+		<div id="play-hi-low" class="container collapse">
+			<div class = "row">
+				<h1>High Low Game</h1>
+				<div class="col-md-6">
+					<div class = "form-group">
+						<div class = "col-md-4"><h3> Make a guess: </h3></div>
+						<div class = "col-md-4"><input type="text" class="form-control" id="guessField"></div>
+						<div class = "col-md-4"><a class="btn btn-success btn-lg" role="button" onclick="GuessMade()">Submit Guess 0-20»</a></div>
+					</div>
+				</div>
+				<div id="hiddenresult" class="col-md-6 collapse collapse-play">
+					<div class = "col-md-6"><h3> Result: </h3></div>
+					<div class = "col-md-6"><p id="resultField"></p></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="cheddar">
+		<div class="container">
+			<div class="row">
+				<h1>Websites are fun.</h1>
+				<div class="col-md-4">
+					<span class="glyphicon glyphicon-barcode glyphicon-large" aria-hidden="true"></span>
+					<h3>Look at this Barcode</h3>
+					<p>Bootstrap lets me put these cool icons in and it handles the layout very nicely. This is fun. I'll probably put something here eventually.</p>
+				</div>
+				<div class="col-md-4">
+					<span class="glyphicon glyphicon-headphones glyphicon-large" aria-hidden="true"></span>
+					<h3>Now this one has headphones!</h3>
+					<p>Bootstrap lets me put these cool icons in and it handles the layout very nicely. This is fun. I'll probably put something here eventually.</p>
+				</div>
+				<div class="col-md-4">
+					<span class="glyphicon glyphicon-glass glyphicon-large" aria-hidden="true"></span>
+					<h3>These icons are great!</h3>
+					<p>Bootstrap lets me put these cool icons in and it handles the layout very nicely. This is fun. I'll probably put something here eventually.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<script>
+		$(document).ready(function(){
+			$(".btn-success").click(function(){
+				$(".collapse-play").collapse('show');
+			});
+		});
+	</script>
 	
   </body>
 </html>
